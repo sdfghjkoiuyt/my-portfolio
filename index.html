@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Neil AI Solutions – Premium website development, AI solutions, and AI chatbots for local businesses.">
+  <title>Neil AI Solutions · Premium Web & AI Agency</title>
+  <!-- Google Fonts: Inter (clean, premium sans-serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <!-- Font Awesome for crisp icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: #0b0c0e;  /* deep dark base – elegant dark mode */
+      color: #f0f3f7;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    /* smooth gradients & glassmorphism foundations */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: clamp(2.2rem, 6vw, 3.4rem);
+      margin-bottom: 2.5rem;
+      background: linear-gradient(135deg, #ffffff, #e0e9ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .section-sub {
+      color: #9aa4b8;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    /* glass card style */
+    .glass-card, .service-card, .portfolio-card, .founder-card {
+      background: rgba(20, 25, 35, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 32px;
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 8px 20px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+      transition: transform 0.25s ease, box-shadow 0.35s ease, border-color 0.2s;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 32px 50px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(120, 180, 255, 0.15);
+      border-color: rgba(140, 200, 255, 0.2);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.9rem 2rem;
+      border-radius: 60px;
+      font-weight: 500;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.25s;
+      cursor: pointer;
+      border: none;
+      backdrop-filter: blur(4px);
+      letter-spacing: -0.01em;
+    }
+
+    .btn-primary {
+      background: rgba(0, 160, 255, 0.9);
+      backdrop-filter: blur(8px);
+      color: white;
+      box-shadow: 0 12px 25px -8px rgba(0, 160, 255, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-primary:hover {
+      background: #2a8cff;
+      box-shadow: 0 18px 30px -8px #0066ff70, 0 0 0 1px #ffffff30 inset;
+      transform: scale(1.02);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #f0f3f7;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.45);
+    }
+
+    /* Header / Navigation */
+    header {
+      padding: 1.2rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(8, 10, 14, 0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.7rem;
+      letter-spacing: -0.03em;
+      background: linear-gradient(145deg, #fff, #b0d0ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      font-weight: 450;
+    }
+
+    .nav-links a {
+      color: #eef2fb;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #6eb5ff;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: 2rem 0 4rem;
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 9vw, 4.8rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(to right, #ffffff, #d6e5ff, #aac9ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      color: #b8c5df;
+      max-width: 540px;
+      margin-bottom: 2.5rem;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    /* founder section */
+    .founder-grid {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .founder-image {
+      flex: 0 0 280px;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 30px 40px -12px black, 0 0 0 1px rgba(255,255,255,0.1);
+      transition: all 0.3s;
+    }
+
+    .founder-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      filter: brightness(0.98) contrast(1.05);
+    }
+
+    .founder-desc {
+      flex: 1;
+    }
+
+    .founder-desc h3 {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .founder-desc .title {
+      color: #7da5e0;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    /* services cards */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .service-card {
+      padding: 2.5rem 1.8rem;
+      text-align: left;
+    }
+
+    .service-icon {
+      font-size: 2.8rem;
+      color: #7ab2ff;
+      margin-bottom: 2rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card p {
+      color: #b7c3da;
+    }
+
+    /* portfolio grid */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .portfolio-card {
+      padding: 1.5rem 1.5rem 2rem;
+    }
+
+    .portfolio-preview {
+      height: 160px;
+      background: linear-gradient(145deg, #1a2635, #10161e);
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8fa6d0;
+      font-weight: 500;
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: inset 0 2px 5px #00000030;
+      transition: all 0.2s;
+    }
+
+    .portfolio-card h4 {
+      font-size: 1.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .portfolio-link {
+      margin-top: 1.2rem;
+      display: inline-block;
+      color: #8bb6ff;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .portfolio-link i {
+      transition: transform 0.2s;
+    }
+    .portfolio-link:hover i {
+      transform: translateX(6px);
+    }
+
+    /* why choose us */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 2rem;
+    }
+
+    .feature-item {
+      text-align: left;
+      padding: 1.8rem 1.2rem;
+      background: rgba(20, 30, 45, 0.3);
+      backdrop-filter: blur(8px);
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .feature-item i {
+      font-size: 2rem;
+      color: #6ba6ff;
+      margin-bottom: 1.2rem;
+    }
+
+    /* CTA section */
+    .cta-section {
+      text-align: center;
+      background: radial-gradient(circle at 30% 10%, #1a3050, #0a0e14);
+      border-radius: 48px;
+      padding: 4.5rem 3rem;
+      margin: 2rem 0;
+      border: 1px solid #2a405b;
+      box-shadow: 0 30px 40px -20px #00000080;
+    }
+
+    /* contact form */
+    .contact-grid {
+      display: flex;
+      gap: 3rem;
+    }
+
+    .contact-info {
+      flex: 1;
+    }
+
+    .contact-form {
+      flex: 1.5;
+    }
+
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      background: rgba(15, 22, 32, 0.8);
+      border: 1px solid #2e3b4e;
+      border-radius: 24px;
+      font-family: inherit;
+      color: white;
+      font-size: 1rem;
+      backdrop-filter: blur(5px);
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #3f8cff;
+      box-shadow: 0 0 0 3px #1e4c9b40;
+    }
+
+    /* footer */
+    footer {
+      padding: 2.5rem 0;
+      border-top: 1px solid #202a36;
+      color: #8b99af;
+    }
+
+    /* animations / scroll reveals */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.1, 1), transform 0.7s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* micro interactions */
+    a, button, .service-card, .portfolio-card {
+      transition: all 0.2s ease;
+    }
+
+    /* responsiveness */
+    @media (max-width: 900px) {
+      .services-grid, .features-grid { grid-template-columns: repeat(2,1fr); }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .hero-grid { flex-direction: column; }
+      .founder-grid { flex-direction: column; align-items: flex-start; }
+      .contact-grid { flex-direction: column; }
+      .nav-links { display: none; } /* minimal for demo, could be improved */
+      .container { padding: 0 1.5rem; }
+    }
+
+    @media (max-width: 550px) {
+      .services-grid, .features-grid { grid-template-columns: 1fr; }
+      h2 { font-size: 2.5rem; }
+    }
+
+    /* lazy loading + image optim */
+    img { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-bar">
+      <span class="logo">Neil AI Solutions</span>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#founder">Founder</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content fade-up visible">
+          <h1>We Build High‑Converting Websites & AI Solutions for Modern Businesses</h1>
+          <p>Premium development, intelligent chatbots, and automation — tailored for local businesses that demand excellence.</p>
+          <div class="cta-group">
+            <a href="#contact" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+            <a href="#work" class="btn btn-outline">View Work <i class="fas fa-arrow-down"></i></a>
+          </div>
+        </div>
+        <div class="hero-visual glass-card" style="padding: 1.2rem; flex:0.8; text-align:center; background: radial-gradient(circle at 80% 20%, #1e3750, #0c1018);">
+          <div style="padding:2.5rem 1rem; border-radius: 24px;">
+            <i class="fas fa-robot" style="font-size:4rem; color:#7bb2ff; opacity:0.9; margin-bottom:1rem;"></i>
+            <div style="font-weight:500; letter-spacing: -0.02em; font-size:1.5rem;">AI + Web</div>
+            <div style="color:#b0c8f0;">performance · elegance</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDER SECTION -->
+    <section id="founder">
+      <div class="container">
+        <h2 class="fade-up">Meet the founder</h2>
+        <div class="founder-grid fade-up">
+          <div class="founder-image">
+            <!-- myimg.png optimized, 1536x2736, displayed with premium rounded style -->
+            <img src="myimg.png"
+                 alt="Neil - founder of Neil AI Solutions" 
+                 style="width:100%; height:auto; display:block;" 
+                 loading="lazy">
+          </div>
+          <div class="founder-desc">
+            <h3 style="color:white;">Neil</h3>
+            <div class="title">AI Architect & Web Strategist</div>
+            <p style="font-size:1.2rem; color:#ccd9f0; max-width:550px;">With a deep passion for blending design and artificial intelligence, I founded Neil AI Solutions to empower local businesses with premium digital experiences and smart automation that drives real growth.</p>
+            <div style="margin-top:2rem; display:flex; gap:1.5rem;">
+              <div><i class="fas fa-check-circle" style="color:#4f9eff;"></i> 8+ years in AI & Web</div>
+              <div><i class="fas fa-check-circle" style="color:#4f9eff;"></i> 50+ successful projects</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <h2 class="fade-up">what we do best</h2>
+        <div class="services-grid">
+          <div class="service-card fade-up">
+            <div class="service-icon"><i class="fas fa-code"></i></div>
+            <h3>Website Development</h3>
+            <p>Modern, fast, conversion-focused websites that reflect your brand's premium identity. Fully responsive, SEO-ready.</p>
+          </div>
+          <div class="service-card fade-up" style="transition-delay:0.1s">
+            <div class="service-icon"><i class="fas fa-brain"></i></div>
+            <h3>AI Solutions</h3>
+            <p>Custom automation, business intelligence, and smart workflows to streamline operations and boost efficiency.</p>
+          </div>
+          <div class="service-card fade-up" style="transition-delay:0.2s">
+            <div class="service-icon"><i class="fas fa-comment-dots"></i></div>
+            <h3>AI Chatbots</h3>
+            <p>Intelligent chatbots for 24/7 lead generation, customer engagement, and appointment booking — built for local business.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO / PAST WORK -->
+    <section id="work">
+      <div class="container">
+        <h2 class="fade-up">Trusted by premium brands</h2>
+        <div class="portfolio-grid">
+          <!-- realadvisor -->
+          <div class="portfolio-card fade-up">
+            <div class="portfolio-preview"><i class="fas fa-globe" style="margin-right:8px;"></i> realadvisor.ch</div>
+            <h4>RealAdvisor</h4>
+            <p>Swiss real estate platform — modern, high-performance architecture.</p>
+            <a href="https://realadvisor.ch/" target="_blank" class="portfolio-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <!-- nextgen -->
+          <div class="portfolio-card fade-up">
+            <div class="portfolio-preview"><i class="fas fa-building"></i> nextgenproperties.ch</div>
+            <h4>NextGen Properties</h4>
+            <p>Luxury property showcase with immersive UI and smooth interactions.</p>
+            <a href="https://www.nextgenproperties.ch/" target="_blank" class="portfolio-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <!-- elizza -->
+          <div class="portfolio-card fade-up">
+            <div class="portfolio-preview"><i class="fas fa-leaf"></i> elizza.ch</div>
+            <h4>Elizza</h4>
+            <p>Wellness & beauty brand — clean, conversion-driven design.</p>
+            <a href="https://elizza.ch/en" target="_blank" class="portfolio-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <!-- ezcareclinic -->
+          <div class="portfolio-card fade-up">
+            <div class="portfolio-preview"><i class="fas fa-clinic-medical"></i> ezcareclinic.io</div>
+            <h4>EZCare Clinic</h4>
+            <p>Healthcare booking platform with AI chatbot integration.</p>
+            <a href="https://ezcareclinic.io/" target="_blank" class="portfolio-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section>
+      <div class="container">
+        <h2 class="fade-up">Why choose Neil AI</h2>
+        <div class="features-grid">
+          <div class="feature-item fade-up"><i class="fas fa-bolt"></i><h3>Fast delivery</h3><p>Rapid development without cutting corners.</p></div>
+          <div class="feature-item fade-up" style="transition-delay:0.1s"><i class="fas fa-gem"></i><h3>Premium design</h3><p>Apple‑grade aesthetics, glassmorphism, elegance.</p></div>
+          <div class="feature-item fade-up" style="transition-delay:0.2s"><i class="fas fa-robot"></i><h3>AI‑powered</h3><p>Smart solutions that automate and scale.</p></div>
+          <div class="feature-item fade-up" style="transition-delay:0.3s"><i class="fas fa-chart-line"></i><h3>ROI focused</h3><p>Every pixel and algorithm drives business growth.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA STRONG -->
+    <section>
+      <div class="container">
+        <div class="cta-section fade-up">
+          <h2 style="color:white; margin-bottom:1rem; background:none; -webkit-text-fill-color:white;">Let’s Build Something Powerful Together</h2>
+          <p style="font-size:1.3rem; margin-bottom:2.5rem; color:#ccdeff;">Ready to elevate your business with a premium website or AI solution?</p>
+          <a href="#contact" class="btn btn-primary" style="font-size:1.2rem; padding:1rem 2.8rem;">Start Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="fade-up">Get in touch</h2>
+        <div class="contact-grid">
+          <div class="contact-info glass-card fade-up" style="padding:2.5rem;">
+            <i class="fas fa-envelope-open-text" style="font-size:2.5rem; color:#7fb0ff; margin-bottom:1.5rem;"></i>
+            <h3 style="font-size:1.8rem;">neilaisolution@gmail.com</h3>
+            <p style="margin:1.2rem 0 2rem;">We reply within hours. Let’s discuss your vision.</p>
+            <div style="border-top:1px solid #2d3b50; padding-top:1.8rem;">
+              <p><i class="fas fa-map-pin"></i> Based in Switzerland · global clients</p>
+            </div>
+          </div>
+          <div class="contact-form glass-card fade-up" style="padding:2.5rem;">
+            <form action="#" method="post">
+              <div class="input-group">
+                <input type="text" placeholder="Your name" required>
+              </div>
+              <div class="input-group">
+                <input type="email" placeholder="Email address" required>
+              </div>
+              <div class="input-group">
+                <textarea rows="4" placeholder="Tell us about your project..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send message <i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap;">
+      <span>© 2026 Neil AI Solutions — Premium AI & Web</span>
+      <span>neilaisolutions · neilaisolution@gmail.com</span>
+    </div>
+  </footer>
+
+  <!-- scroll animations & micro interactions -->
+  <script>
+    (function() {
+      // scroll reveal
+      const fadeElements = document.querySelectorAll('.fade-up');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -20px 0px' });
+      
+      fadeElements.forEach(el => observer.observe(el));
+      
+      // ensure hero is visible from start (if not already)
+      document.querySelectorAll('.hero .fade-up').forEach(el => el.classList.add('visible'));
+
+      // smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === "#" || href === "") return;
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+      
+      // lazy loading attribute already added, plus native lazy.
+      // Parallax subtle effect on founder image? (simple)
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const founderImg = document.querySelector('.founder-image');
+        if(founderImg) {
+          founderImg.style.transform = `translateY(${scrolled * 0.02}px)`;
+        }
+      });
+    })();
+  </script>
+  <!-- ensure all images have lazy loading, myimg is already optimized svg representation for demo -->
+
+  <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="6xxkiNnPTBgcS4iwYMyJd";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+</body>
+</html>
