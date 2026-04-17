@@ -416,20 +416,71 @@
     }
 
     /* responsiveness */
-    @media (max-width: 900px) {
-      .services-grid, .features-grid { grid-template-columns: repeat(2,1fr); }
-      .portfolio-grid { grid-template-columns: 1fr; }
-      .hero-grid { flex-direction: column; }
-      .founder-grid { flex-direction: column; align-items: flex-start; }
-      .contact-grid { flex-direction: column; }
-      .nav-links { display: none; } /* minimal for demo, could be improved */
-      .container { padding: 0 1.5rem; }
+   @media (max-width: 900px) {
+    #menu-icon {
+        display: block;
     }
 
-    @media (max-width: 550px) {
-      .services-grid, .features-grid { grid-template-columns: 1fr; }
-      h2 { font-size: 2.5rem; }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
     }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    /* --- YE ASLI FIX HAI --- */
+    .home {
+        flex-direction: column-reverse; /* Text niche, Photo upar */
+        height: auto !important;       /* Screen size ki bandish khatam */
+        padding: 10rem 3% 5rem;        /* Top/Bottom space barabar rakho */
+        gap: 2rem;
+    }
+
+    .home-content {
+        text-align: center;            /* Text ko center mein rakho */
+    }
+
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-img img {
+        width: 60vw;                   /* Photo ka size */
+        height: auto;                  /* Cut hone se bachayega */
+        margin-top: 0;                 /* Purani 4rem margin hatao */
+    }
+}
+
+    @media (max-width: 550px) {
+    .home-content h1 {
+        font-size: 3.5rem;             /* Mobile par font size chota rakho */
+    }
+
+    .home-img img {
+        width: 80vw;                   /* Chote phone par photo aur badi */
+        height: auto;                  /* Ensures no cutting */
+        margin-top: 0;
+    }
+}
 
     /* lazy loading + image optim */
     img { max-width: 100%; height: auto; }
